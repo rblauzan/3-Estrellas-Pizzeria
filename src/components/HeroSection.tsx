@@ -1,14 +1,26 @@
-
-import { Flame, Heart, ShoppingCart, Star } from "lucide-react"
+import { Flame, Heart, ShoppingCart, Star } from "lucide-react";
+import { ImageCarousel } from "./ImageCarousel";
 
 interface HeroSectionProps {
-  onMenuOpen: () => void
-  onCartOpen: () => void
+  onMenuOpen: () => void;
+  onCartOpen: () => void;
 }
 
 export function HeroSection({ onMenuOpen, onCartOpen }: HeroSectionProps) {
+  // Array de imágenes para el carrusel
+  const carouselImages = [
+    "/placeholder.svg?height=400&width=500&text=Pizza+Margherita",
+    "/placeholder.svg?height=400&width=500&text=Pizza+Pepperoni",
+    "/placeholder.svg?height=400&width=500&text=Pizza+Cuatro+Quesos",
+    "/placeholder.svg?height=400&width=500&text=Pizza+Hawaiana",
+    "/placeholder.svg?height=400&width=500&text=Pizza+Vegetariana",
+  ];
+
   return (
-    <section id="inicio" className="py-20 bg-gradient-to-r from-red-600 to-orange-600 text-white">
+    <section
+      id="inicio"
+      className="py-20 bg-gradient-to-r from-red-600 to-orange-600 text-white"
+    >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
@@ -17,8 +29,8 @@ export function HeroSection({ onMenuOpen, onCartOpen }: HeroSectionProps) {
               <span className="block text-orange-200">de la Ciudad</span>
             </h2>
             <p className="text-xl text-orange-100">
-              En 3 Estrellas preparamos pizzas artesanales con ingredientes frescos y recetas tradicionales italianas
-              desde 1985.
+              En 3 Estrellas preparamos pizzas artesanales con ingredientes
+              frescos y recetas tradicionales italianas desde 1985.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button
@@ -39,26 +51,31 @@ export function HeroSection({ onMenuOpen, onCartOpen }: HeroSectionProps) {
             <div className="flex items-center space-x-4 pt-4">
               <div className="flex items-center">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  <Star
+                    key={i}
+                    className="h-5 w-5 fill-yellow-400 text-yellow-400"
+                  />
                 ))}
               </div>
-              <span className="text-orange-100">4.8/5 - Más de 2,000 reseñas</span>
+              <span className="text-orange-100">
+                4.8/5 - Más de 2,000 reseñas
+              </span>
             </div>
           </div>
-          <div className="relative">
-          <img
-              src="/placeholder.svg?height=400&width=500"
-              alt="Pizza deliciosa"
-              width={500}
-              height={400}
-              className="rounded-lg shadow-2xl"
+
+          {/* Carrusel de imágenes */}
+          <div className="relative h-96 lg:h-[400px]">
+            <ImageCarousel
+              images={carouselImages}
+              autoPlay={true}
+              autoPlayInterval={3000}
             />
-            <div className="absolute -top-4 -right-4 bg-yellow-400 text-red-600 rounded-full p-3 shadow-lg">
+            <div className="absolute -top-4 -right-4 bg-yellow-400 text-red-600 rounded-full p-3 shadow-lg z-10">
               <Heart className="h-6 w-6 fill-current" />
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

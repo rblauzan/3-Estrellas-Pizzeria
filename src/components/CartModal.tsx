@@ -1,16 +1,15 @@
-
-import { ShoppingCart, Plus, Minus, X } from "lucide-react"
-import type { CartItem } from "../types"
-import { agregados } from "../data/menu"
+import { ShoppingCart, Plus, Minus, X } from "lucide-react";
+import type { CartItem } from "../types";
+import { agregados } from "../data/menu";
 
 interface CartModalProps {
-  isOpen: boolean
-  onOpenChange: (open: boolean) => void
-  cart: CartItem[]
-  onUpdateQuantity: (id: string, quantity: number) => void
-  onRemoveItem: (id: string) => void
-  onSendToWhatsApp: () => void
-  onOpenMenu: () => void
+  isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
+  cart: CartItem[];
+  onUpdateQuantity: (id: string, quantity: number) => void;
+  onRemoveItem: (id: string) => void;
+  onSendToWhatsApp: () => void;
+  onOpenMenu: () => void;
 }
 
 export function CartModal({
@@ -25,16 +24,21 @@ export function CartModal({
   const getTotalPrice = () => {
     return cart.reduce((total, item) => {
       const agregadosPrice = item.agregados.reduce((sum, agregado) => {
-        const agregadoItem = agregados.find((a) => a.nombre === agregado)
-        return sum + (agregadoItem?.precio || 0)
-      }, 0)
-      return total + (item.precio + agregadosPrice) * item.cantidad
-    }, 0)
-  }
+        const agregadoItem = agregados.find((a) => a.nombre === agregado);
+        return sum + (agregadoItem?.precio || 0);
+      }, 0);
+      return total + (item.precio + agregadosPrice) * item.cantidad;
+    }, 0);
+  };
 
-  const totalItems = cart.reduce((sum, item) => sum + item.cantidad, 0)
+  const totalItems = cart.reduce((sum, item) => sum + item.cantidad, 0);
 
-  if (!isOpen) return null
+  const handleSendToWhatsApp = () => {
+    onSendToWhatsApp();
+    onOpenChange(false); // Cerrar el modal después de enviar
+  };
+
+  if (!isOpen) return null;
 
   return (
     <>
@@ -49,10 +53,15 @@ export function CartModal({
                 Tu Carrito
               </h2>
               <p className="text-gray-600 mt-1">
-                {cart.length === 0 ? "Tu carrito está vacío" : `${totalItems} productos en tu carrito`}
+                {cart.length === 0
+                  ? "Tu carrito está vacío"
+                  : `${totalItems} productos en tu carrito`}
               </p>
             </div>
-            <button onClick={() => onOpenChange(false)} className="text-gray-400 hover:text-gray-600 p-1">
+            <button
+              onClick={() => onOpenChange(false)}
+              className="text-gray-400 hover:text-gray-600 p-1"
+            >
               <X className="h-6 w-6" />
             </button>
           </div>
@@ -62,11 +71,13 @@ export function CartModal({
             {cart.length === 0 ? (
               <div className="text-center py-8">
                 <ShoppingCart className="h-16 w-16 mx-auto text-gray-300 mb-4" />
-                <p className="text-gray-500 mb-4">No hay productos en tu carrito</p>
+                <p className="text-gray-500 mb-4">
+                  No hay productos en tu carrito
+                </p>
                 <button
                   onClick={() => {
-                    onOpenChange(false)
-                    onOpenMenu()
+                    onOpenChange(false);
+                    onOpenMenu();
                   }}
                   className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md transition-colors"
                 >
@@ -79,31 +90,41 @@ export function CartModal({
                   <div key={item.id} className="bg-gray-50 rounded-lg p-4">
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
-                        <h3 className="font-semibold text-gray-800">{item.nombre}</h3>
+                        <h3 className="font-semibold text-gray-800">
+                          {item.nombre}
+                        </h3>
                         {item.agregados.length > 0 && (
-                          <p className="text-sm text-gray-600">Con: {item.agregados.join(", ")}</p>
+                          <p className="text-sm text-gray-600">
+                            Con: {item.agregados.join(", ")}
+                          </p>
                         )}
                         <p className="text-lg font-bold text-red-600">
                           $
                           {(
                             item.precio +
                             item.agregados.reduce((sum, agregado) => {
-                              const agregadoItem = agregados.find((a) => a.nombre === agregado)
-                              return sum + (agregadoItem?.precio || 0)
+                              const agregadoItem = agregados.find(
+                                (a) => a.nombre === agregado
+                              );
+                              return sum + (agregadoItem?.precio || 0);
                             }, 0)
                           ).toFixed(2)}
                         </p>
                       </div>
                       <div className="flex items-center space-x-2">
                         <button
-                          onClick={() => onUpdateQuantity(item.id, item.cantidad - 1)}
+                          onClick={() =>
+                            onUpdateQuantity(item.id, item.cantidad - 1)
+                          }
                           className="border border-gray-300 hover:bg-gray-100 p-1 rounded"
                         >
                           <Minus className="h-4 w-4" />
                         </button>
                         <span className="w-8 text-center">{item.cantidad}</span>
                         <button
-                          onClick={() => onUpdateQuantity(item.id, item.cantidad + 1)}
+                          onClick={() =>
+                            onUpdateQuantity(item.id, item.cantidad + 1)
+                          }
                           className="border border-gray-300 hover:bg-gray-100 p-1 rounded"
                         >
                           <Plus className="h-4 w-4" />
@@ -121,14 +142,20 @@ export function CartModal({
 
                 <div className="border-t pt-4">
                   <div className="flex justify-between items-center mb-4">
-                    <span className="text-xl font-bold">Total: ${getTotalPrice().toFixed(2)}</span>
+                    <span className="text-xl font-bold">
+                      Total: ${getTotalPrice().toFixed(2)}
+                    </span>
                   </div>
                   <button
-                    onClick={onSendToWhatsApp}
+                    onClick={handleSendToWhatsApp}
                     className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-md transition-colors font-medium"
                   >
                     Ordenar por WhatsApp
                   </button>
+                  <p className="text-xs text-gray-500 text-center mt-2">
+                    Al hacer clic, se abrirá WhatsApp y el carrito se vaciará
+                    automáticamente
+                  </p>
                 </div>
               </div>
             )}
@@ -136,5 +163,5 @@ export function CartModal({
         </div>
       </div>
     </>
-  )
+  );
 }
