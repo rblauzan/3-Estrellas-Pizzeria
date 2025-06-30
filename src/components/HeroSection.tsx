@@ -9,11 +9,12 @@ interface HeroSectionProps {
 export function HeroSection({ onMenuOpen, onCartOpen }: HeroSectionProps) {
   // Array de imágenes para el carrusel
   const carouselImages = [
-    "/placeholder.svg?height=400&width=500&text=Pizza+Margherita",
-    "/placeholder.svg?height=400&width=500&text=Pizza+Pepperoni",
-    "/placeholder.svg?height=400&width=500&text=Pizza+Cuatro+Quesos",
-    "/placeholder.svg?height=400&width=500&text=Pizza+Hawaiana",
-    "/placeholder.svg?height=400&width=500&text=Pizza+Vegetariana",
+    "/Napoles.jpg?height=400&width=500&text=Pizza+Napolitana Clásica",
+    "/placeholder.svg?height=400&width=500&text=Pizza+Jamón Supreme",
+    "/placeholder.svg?height=400&width=500&text=Pizza+Cebolla Supreme",
+    "/placeholder.svg?height=400&width=500&text=Pizza+Hawaiana Supreme",
+    "/placeholder.svg?height=400&width=500&text=Pizza+Familiar Napolitana",
+    "/placeholder.svg?height=400&width=500&text=Pizza+Familiar Mixta",
   ];
 
   return (
@@ -30,7 +31,15 @@ export function HeroSection({ onMenuOpen, onCartOpen }: HeroSectionProps) {
             </h2>
             <p className="text-xl text-orange-100">
               En 3 Estrellas preparamos pizzas artesanales con ingredientes
-              frescos y recetas tradicionales italianas desde 1985.
+              frescos y recetas tradicionales inspiradas en la cocina de la
+              abuela cubana a tu hogar. Nos encargamos de romper la rutina y
+              conectar corazones para unir a la familia desde la distancia. 
+              Ademas podrás encontrar dulces exquisitos y bebidas refrescantes.
+            </p>
+            <p className="text-4xl text-orange-100">
+              <strong>
+                !Sorprende a tu familia en Cuba con nuestros sabores!
+              </strong>
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button

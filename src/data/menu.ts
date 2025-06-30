@@ -2,27 +2,27 @@ import type { Pizza, Bebida, Postre, Agregado } from "../types"
 
 export const pizzasDestacadas: Pizza[] = [
   {
-    nombre: "Margherita Clásica",
-    descripcion: "Salsa de tomate, mozzarella fresca, albahaca y aceite de oliva",
-    precio: 14.99,
+    nombre: "Napolitana Clásica",
+    descripcion: "Salsa de tomate, queso gouda, albahaca y aceite de oliva",
+    precio: 3.50,
+    imagen: "/Napoles.jpg?height=150&width=150",
+  },
+  {
+    nombre: "Jamón Supreme",
+    descripcion: "Jamón, queso gouda, salsa de tomate, albahaca y aceite de oliva",
+    precio: 4.50,
     imagen: "/placeholder.svg?height=150&width=150",
   },
   {
-    nombre: "Pepperoni Supreme",
-    descripcion: "Pepperoni, mozzarella, salsa especial y orégano",
-    precio: 16.99,
+    nombre: "Cebolla Supreme",
+    descripcion: "Cebolla, queso gouda, salsa de tomate, albahaca y aceite de oliva",
+    precio: 4.00,
     imagen: "/placeholder.svg?height=150&width=150",
   },
   {
-    nombre: "Cuatro Quesos",
-    descripcion: "Mozzarella, parmesano, gorgonzola y ricotta",
-    precio: 18.99,
-    imagen: "/placeholder.svg?height=150&width=150",
-  },
-  {
-    nombre: "Hawaiana",
-    descripcion: "Jamón, piña, mozzarella y salsa de tomate",
-    precio: 15.99,
+    nombre: "Hawaiana Supreme",
+    descripcion: "Jamón, piña, queso gouda, salsa de tomate, albahaca y aceite de oliva",
+    precio: 4.90,
     imagen: "/placeholder.svg?height=150&width=150",
   },
 ]
@@ -30,54 +30,38 @@ export const pizzasDestacadas: Pizza[] = [
 export const todasLasPizzas: Pizza[] = [
   ...pizzasDestacadas,
   {
-    nombre: "Vegetariana",
-    descripcion: "Pimientos, champiñones, cebolla, tomate y aceitunas",
-    precio: 16.99,
+    nombre: "Familiar Napolitana",
+    descripcion: "Salsa de tomate, queso gouda, albahaca y aceite de oliva",
+    precio: 6.20,
     imagen: "/placeholder.svg?height=100&width=100",
   },
   {
-    nombre: "Carnívora",
-    descripcion: "Pepperoni, salchicha, jamón, tocino y carne molida",
-    precio: 21.99,
+    nombre: "Familiar Mixta",
+    descripcion: "Jamón, cebolla confitada, pimineto y piña",
+    precio: 8.20,
     imagen: "/placeholder.svg?height=100&width=100",
-  },
-  {
-    nombre: "BBQ Chicken",
-    descripcion: "Pollo a la parrilla, salsa BBQ, cebolla morada y cilantro",
-    precio: 19.99,
-    imagen: "/placeholder.svg?height=100&width=100",
-  },
-  {
-    nombre: "Mediterránea",
-    descripcion: "Aceitunas, tomates secos, queso feta, espinacas y orégano",
-    precio: 18.99,
-    imagen: "/placeholder.svg?height=100&width=100",
-  },
+  }
 ]
 
 export const bebidas: Bebida[] = [
-  { nombre: "Coca-Cola", precio: 2.99, tamaño: "500ml" },
-  { nombre: "Sprite", precio: 2.99, tamaño: "500ml" },
-  { nombre: "Agua Natural", precio: 1.99, tamaño: "500ml" },
-  { nombre: "Jugo de Naranja", precio: 3.99, tamaño: "500ml" },
-  { nombre: "Cerveza Nacional", precio: 4.99, tamaño: "355ml" },
-  { nombre: "Vino Tinto", precio: 12.99, tamaño: "Copa" },
+  { nombre: "Refresco de Cola", precio: 0.95, tamaño: "355ml" },
+  { nombre: "Refresco de Naranja", precio: 0.95, tamaño: "355ml" },
+  { nombre: "Refresco de Limón ", precio: 0.95, tamaño: "355ml" },
+  { nombre: "Refresco de Mate", precio: 0.95, tamaño: "355ml" },
+  { nombre: "Malta Importada", precio: 1.20, tamaño: "355ml" },
+  { nombre: "Cerveza Importada", precio: 1.20, tamaño: "355ml" },
 ]
 
 export const postres: Postre[] = [
-  { nombre: "Tiramisu", descripcion: "Postre italiano tradicional", precio: 6.99 },
-  { nombre: "Gelato", descripcion: "Helado artesanal (vainilla, chocolate, fresa)", precio: 4.99 },
-  { nombre: "Cannoli", descripcion: "Dulce siciliano relleno de ricotta", precio: 5.99 },
-  { nombre: "Panna Cotta", descripcion: "Postre cremoso con frutos rojos", precio: 5.99 },
+  { nombre: "Roscón Premium Chocolate", descripcion: "Más grande y exclusivo con extra de chocolate", precio: 8.00 },
+  { nombre: "Roscón Supreme ", descripcion: "Un paso arriba con toques extra de chocolate", precio: 4.99 },
+  { nombre: "Roscón Pasión de Azúcar ", descripcion: "Estilo tradicional de mini delicia, azúcar y decoración simple", precio: 5.99 },
+  { nombre: "Roscón Mini Delicia", descripcion: "El más pequeño, sencillo y tradicional", precio: 5.99 },
 ]
 
 export const agregados: Agregado[] = [
-  { nombre: "Jamón", precio: 2.0 },
-  { nombre: "Pepperoni", precio: 2.5 },
-  { nombre: "Champiñones", precio: 1.5 },
-  { nombre: "Pimientos", precio: 1.5 },
-  { nombre: "Cebolla", precio: 1.0 },
-  { nombre: "Aceitunas", precio: 1.5 },
-  { nombre: "Queso Extra", precio: 2.0 },
-  { nombre: "Tocino", precio: 2.5 },
+  { nombre: "Jamón", precio: 0.75 },
+  { nombre: "Pimientos", precio: 0.50 },
+  { nombre: "Cebolla Confitada", precio: 0.50 },
+  { nombre: "Queso Extra", precio: 0.75 },
 ]

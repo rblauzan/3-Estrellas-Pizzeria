@@ -11,7 +11,7 @@ export function Footer() {
               <h3 className="text-xl font-bold">3 Estrellas Pizzería</h3>
             </div>
             <p className="text-gray-300">
-              Sirviendo las mejores pizzas artesanales desde 1985. Tres estrellas de calidad en cada bocado.
+              Sirviendo las mejores pizzas artesanales. Tres estrellas de calidad en cada bocado.
             </p>
           </div>
 
@@ -23,9 +23,6 @@ export function Footer() {
               </a>
               <a href="#contacto" className="block text-gray-300 hover:text-white transition-colors">
                 Contacto
-              </a>
-              <a href="#" className="block text-gray-300 hover:text-white transition-colors">
-                Delivery
               </a>
             </div>
           </div>
