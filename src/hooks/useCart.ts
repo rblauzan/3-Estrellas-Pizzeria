@@ -1,13 +1,13 @@
 import { useState } from "react";
-import type { CartItem, Pizza, Bebida, Postre } from "../types";
+import type { CartItem, Pizzas, Bebida } from "../types";
 import { agregados } from "../data/menu";
 
 export function useCart() {
   const [cart, setCart] = useState<CartItem[]>([]);
 
   const addToCart = (
-    item: Pizza | Bebida | Postre,
-    tipo: "pizza" | "bebida" | "postre",
+    item: Pizzas | Bebida ,
+    tipo: "pizza" | "bebida",
     selectedAgregados: string[] = []
   ) => {
     const id = `${item.nombre}-${Date.now()}`;

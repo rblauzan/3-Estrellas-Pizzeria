@@ -112,7 +112,6 @@ export function CartModal({
                           >
                             {item.tipo === "pizza" && <span className="text-2xl">🍕</span>}
                             {item.tipo === "bebida" && <span className="text-2xl">🥤</span>}
-                            {item.tipo === "postre" && <span className="text-2xl">🍰</span>}
                           </div>
                         </div>
 

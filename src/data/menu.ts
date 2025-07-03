@@ -1,6 +1,6 @@
-import type { Pizza, Bebida, Agregado } from "../types";
+import type { Pizzas, Bebida, Agregado } from "../types";
 
-export const pizzasDestacadas: Pizza[] = [
+export const pizzasDestacadas: Pizzas[] = [
   {
     nombre: "Jamón Supreme",
     descripcion:
@@ -30,7 +30,7 @@ export const pizzasDestacadas: Pizza[] = [
   },
 ];
 
-export const todasLasPizzas: Pizza[] = [
+export const todasLasPizzas: Pizzas[] = [
   {
     nombre: "Napolitana Supreme",
     descripcion:

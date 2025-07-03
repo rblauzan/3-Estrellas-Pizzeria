@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { X } from "lucide-react";
-import type { Pizza } from "../types";
+import type { Pizzas } from "../types";
 import { agregados } from "../data/menu";
 
 interface PizzaOrderDialogProps {
-  pizza: Pizza;
+  pizza: Pizzas;
   onAdd: (selectedAgregados: string[]) => void;
 }
 

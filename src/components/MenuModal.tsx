@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Pizza, X, Coffee, Utensils } from "lucide-react"
 import { PizzaOrderDialog } from "./PizzaOrderDialog"
 import { todasLasPizzas, bebidas } from "../data/menu"
-import type { Pizza as PizzaType, Bebida } from "../types"
+import type { Pizzas as PizzaType, Bebida } from "../types"
 
 interface MenuModalProps {
   isOpen: boolean
