@@ -3,8 +3,8 @@ import { Phone, Clock, Pizza, Flame, Heart } from "lucide-react";
 export function ContactSection() {
   return (
     <section id="contacto" className="py-16 bg-gray-100">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div>
             <h2 className="text-3xl font-bold text-gray-800 mb-6">
               ¿Por qué elegir 3 Estrellas?

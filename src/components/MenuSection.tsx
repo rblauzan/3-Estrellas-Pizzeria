@@ -52,13 +52,7 @@ export function MenuSection({ onAddToCart }: MenuSectionProps) {
                   <div className="text-center">
                     <span className="text-2xl font-bold text-red-600">${pizza.precio.toFixed(2)}</span>
                     <p className="text-xs text-gray-500">por pizza</p>
-                  </div>
-                  <div className="flex items-end">
-                    <PizzaOrderDialog
-                      pizza={pizza}
-                      onAdd={(selectedAgregados) => onAddToCart(pizza, selectedAgregados)}
-                    />
-                  </div>
+                  </div>                  
                 </div>
               </div>
             </div>

@@ -61,15 +61,19 @@ export const todasLasPizzas: Pizzas[] = [
   },
   {
     nombre: "Familiar Napolitana",
-    descripcion: "Salsa de tomate, queso gouda, albahaca y aceite de oliva",
+    descripcion:
+      "Salsa de tomate, queso gouda, albahaca y aceite de oliva",
     precio: 6.20,
     imagen: "/pizzasection/FamiliarNapoles.jpg?height=100&width=100",
+    esFamiliar: true,
   },
   {
     nombre: "Familiar Mixta",
-    descripcion: "Jamón, cebolla confitada, pimineto y piña",
+    descripcion:
+      "Salsa de tomate, queso gouda, jamón, cebolla confitada, pimiento, piña, albahaca y aceite de oliva",
     precio: 8.20,
     imagen: "/pizzasection/FamiliarMixta.jpg?height=100&width=100",
+    esFamiliar: true,
   },
 ];
 

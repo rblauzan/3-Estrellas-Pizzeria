@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -22,7 +23,7 @@ export function ImageCarousel({
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, autoPlayInterval);
 
-    return () => clearInterval(interval);
+    return () => { clearInterval(interval); };
   }, [autoPlay, autoPlayInterval, images.length]);
 
   const goToPrevious = () => {
@@ -87,7 +88,7 @@ export function ImageCarousel({
         {images.map((_, index) => (
           <button
             key={index}
-            onClick={() => goToSlide(index)}
+            onClick={() => { goToSlide(index); }}
             className={`w-3 h-3 rounded-full transition-all duration-200 ${
               index === currentIndex
                 ? "bg-white"
