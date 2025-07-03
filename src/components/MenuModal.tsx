@@ -4,18 +4,17 @@ import { useState } from "react"
 import { Pizza, X, Coffee, Utensils } from "lucide-react"
 import { PizzaOrderDialog } from "./PizzaOrderDialog"
 import { todasLasPizzas, bebidas } from "../data/menu"
-import type { Pizza as PizzaType, Bebida, Postre } from "../types"
+import type { Pizza as PizzaType, Bebida } from "../types"
 
 interface MenuModalProps {
   isOpen: boolean
   onOpenChange: (open: boolean) => void
   onAddPizza: (pizza: PizzaType, selectedAgregados: string[]) => void
   onAddBebida: (bebida: Bebida) => void
-  onAddPostre: (postre: Postre) => void
 }
 
 export function MenuModal({ isOpen, onOpenChange, onAddPizza, onAddBebida }: MenuModalProps) {
-  const [activeTab, setActiveTab] = useState<"pizzas" | "bebidas" | "postres">("pizzas")
+  const [activeTab, setActiveTab] = useState<"pizzas" | "bebidas">("pizzas")
 
   if (!isOpen) return null
 

@@ -4,10 +4,10 @@ export interface CartItem {
   precio: number;
   cantidad: number;
   agregados: string[];
-  tipo: "pizza" | "bebida" | "postre";
+  tipo: "pizza" | "bebida";
 }
 
-export interface Pizza {
+export interface Pizzas {
   nombre: string;
   descripcion: string;
   precio: number;
@@ -18,12 +18,6 @@ export interface Bebida {
   nombre: string;
   precio: number;
   tamaño: string;
-}
-
-export interface Postre {
-  nombre: string;
-  descripcion: string;
-  precio: number;
 }
 
 export interface Agregado {

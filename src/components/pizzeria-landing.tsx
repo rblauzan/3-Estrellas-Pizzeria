@@ -8,7 +8,7 @@ import { Footer } from "../components/Footer";
 import { MenuModal } from "../components/MenuModal";
 import { CartModal } from "../components/CartModal";
 import { useCart } from "../hooks/useCart";
-import type { Pizza, Bebida, Postre } from "../types";
+import type { Pizzas, Bebida } from "../types";
 import { MenuCompleteButton } from "./MenuCompleteButton";
 
 export default function Component() {
@@ -18,7 +18,7 @@ export default function Component() {
   const { cart, addToCart, removeFromCart, updateQuantity, sendToWhatsApp } =
     useCart();
 
-  const handleAddPizza = (pizza: Pizza, selectedAgregados: string[]) => {
+  const handleAddPizza = (pizza: Pizzas, selectedAgregados: string[]) => {
     addToCart(pizza, "pizza", selectedAgregados);
   };
 
@@ -26,9 +26,6 @@ export default function Component() {
     addToCart(bebida, "bebida");
   };
 
-  const handleAddPostre = (postre: Postre) => {
-    addToCart(postre, "postre");
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-red-50">
@@ -43,6 +40,7 @@ export default function Component() {
         onMenuOpen={() => setIsMenuOpen(true)}
         onAddToCart={handleAddPizza}
       />
+      
       <MenuCompleteButton onMenuOpen={() => setIsMenuOpen(true)} />
 
       <ContactSection />
@@ -54,7 +52,6 @@ export default function Component() {
         onOpenChange={setIsMenuOpen}
         onAddPizza={handleAddPizza}
         onAddBebida={handleAddBebida}
-        onAddPostre={handleAddPostre}
       />
 
       <CartModal

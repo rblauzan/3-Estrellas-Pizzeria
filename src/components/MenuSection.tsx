@@ -1,10 +1,16 @@
 "use client"
 
 import { Pizza } from "lucide-react"
+import { PizzaOrderDialog } from "./PizzaOrderDialog"
 import { pizzasDestacadas } from "../data/menu"
+import type { Pizzas  } from "../types"
 
+interface MenuSectionProps {
+  onMenuOpen: () => void
+  onAddToCart: (pizza: Pizzas, selectedAgregados: string[]) => void
+}
 
-export function MenuSection() {
+export function MenuSection({ onAddToCart }: MenuSectionProps) {
   return (
     <section id="menu" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -47,6 +53,12 @@ export function MenuSection() {
                     <span className="text-2xl font-bold text-red-600">${pizza.precio.toFixed(2)}</span>
                     <p className="text-xs text-gray-500">por pizza</p>
                   </div>
+                  <div className="flex items-end">
+                    <PizzaOrderDialog
+                      pizza={pizza}
+                      onAdd={(selectedAgregados) => onAddToCart(pizza, selectedAgregados)}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -57,7 +69,8 @@ export function MenuSection() {
           <div className="bg-white rounded-lg p-6 shadow-md border border-red-200 max-w-2xl mx-auto">
             <h3 className="text-xl font-semibold text-gray-800 mb-2">🍕 Pizzas Artesanales</h3>
             <p className="text-gray-600">
-              Nuestras pizzas son preparadas con masa fresca diaria, ingredientes premium y recien horneadas para ti!
+              Nuestras pizzas son preparadas con masa fresca diaria, ingredientes premium y horneadas en horno de leña
+              tradicional para lograr el sabor auténtico italiano.
             </p>
           </div>
         </div>
