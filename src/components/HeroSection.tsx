@@ -1,4 +1,4 @@
-import { Flame, Heart, ShoppingCart, Star } from "lucide-react";
+import { Menu, Heart, ShoppingCart, Star } from "lucide-react";
 import { ImageCarousel } from "./ImageCarousel";
 
 interface HeroSectionProps {
@@ -9,12 +9,12 @@ interface HeroSectionProps {
 export function HeroSection({ onMenuOpen, onCartOpen }: HeroSectionProps) {
   // Array de imágenes para el carrusel
   const carouselImages = [
-    "/Napoles.jpg?height=400&width=500&text=Pizza+Napolitana Clásica",
-    "/placeholder.svg?height=400&width=500&text=Pizza+Jamón Supreme",
-    "/placeholder.svg?height=400&width=500&text=Pizza+Cebolla Supreme",
-    "/placeholder.svg?height=400&width=500&text=Pizza+Hawaiana Supreme",
-    "/placeholder.svg?height=400&width=500&text=Pizza+Familiar Napolitana",
-    "/placeholder.svg?height=400&width=500&text=Pizza+Familiar Mixta",
+    "/carrousel/Carrousel-1.png?height=400&width=500&text=Pizza+Napolitana Clásica",
+    "/carrousel/Carrousel-2.jpg?height=400&width=500&text=Pizza+Jamón Supreme",
+    "/carrousel/Carrousel-3.jpg?height=400&width=500&text=Pizza+Cebolla Supreme",
+    "/carrousel/Carrousel-4.jpg?height=400&width=500&text=Pizza+Hawaiana Supreme",
+    "/carrousel/Carrousel-5.jpg?height=400&width=500&text=Pizza+Familiar Napolitana",
+    "/carrousel/Carrousel-6.jpg?height=400&width=500&text=Pizza+Familiar Mixta",
   ];
 
   return (
@@ -38,23 +38,24 @@ export function HeroSection({ onMenuOpen, onCartOpen }: HeroSectionProps) {
             </p>
             <p className="text-4xl text-orange-100">
               <strong>
-                !Sorprende a tu familia en Cuba con nuestros sabores!
+                Sorprende a tu familia en Cuba con nuestros sabores!
               </strong>
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button
+            <button
                 onClick={onMenuOpen}
-                className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md transition-colors flex items-center justify-center text-lg"
+                className="group relative bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl transition-all duration-300 flex items-center justify-center text-lg font-medium shadow-lg hover:shadow-xl transform hover:scale-105"
               >
-                <Flame className="h-5 w-5 mr-2" />
-                Ver Menú
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Menu className="h-5 w-5 mr-2 group-hover:rotate-180 transition-transform duration-500" />
+                <span className="relative z-10">Ver Menú</span>
               </button>
               <button
                 onClick={onCartOpen}
-                className="border border-white text-white hover:bg-white hover:text-red-600 bg-transparent px-6 py-3 rounded-md transition-colors flex items-center justify-center text-lg"
+                className="group relative border-2 border-white text-white hover:bg-white hover:text-red-600 bg-transparent px-6 py-3 rounded-xl transition-all duration-300 flex items-center justify-center text-lg font-medium shadow-lg hover:shadow-xl transform hover:scale-105"
               >
-                <ShoppingCart className="h-5 w-5 mr-2" />
-                Ver Carrito
+                <ShoppingCart className="h-5 w-5 mr-2 group-hover:animate-bounce" />
+                <span className="relative z-10">Ver Carrito</span>
               </button>
             </div>
             <div className="flex items-center space-x-4 pt-4">

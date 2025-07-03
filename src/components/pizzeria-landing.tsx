@@ -9,6 +9,7 @@ import { MenuModal } from "../components/MenuModal";
 import { CartModal } from "../components/CartModal";
 import { useCart } from "../hooks/useCart";
 import type { Pizza, Bebida, Postre } from "../types";
+import { MenuCompleteButton } from "./MenuCompleteButton";
 
 export default function Component() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,6 +43,7 @@ export default function Component() {
         onMenuOpen={() => setIsMenuOpen(true)}
         onAddToCart={handleAddPizza}
       />
+      <MenuCompleteButton onMenuOpen={() => setIsMenuOpen(true)} />
 
       <ContactSection />
 
