@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-"use client"
+
 
 import { ShoppingCart, Plus, Minus, X, Trash2, PhoneIcon as WhatsApp, UtensilsCrossed } from "lucide-react"
 import type { CartItem } from "../types"

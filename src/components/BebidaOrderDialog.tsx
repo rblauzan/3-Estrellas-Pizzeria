@@ -1,4 +1,4 @@
-"use client"
+
 import { useState } from "react"
 import { X, Coffee } from "lucide-react"
 import type { Bebida } from "../types"
