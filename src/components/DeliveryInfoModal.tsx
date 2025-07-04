@@ -305,7 +305,7 @@ export function DeliveryInfoModal({
                 Horario de Entrega
               </h4>
               <p className="text-sm text-gray-600">
-                <strong>Lun - Dom:</strong> 11:00 AM - 10:30 PM
+                <strong>Sábado - Jueves:</strong> 12:00 AM - 8:30 PM
                 <br />
                 <span className="text-xs text-gray-500">
                   {isFamiliar

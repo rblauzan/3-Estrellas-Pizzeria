@@ -156,7 +156,7 @@ export function PizzaOrderDialog({ pizza, onAdd }: PizzaOrderDialogProps) {
                 </p>
                 {pizza.esFamiliar && (
                   <div className="mt-2 text-xs text-yellow-200 font-medium">
-                    📏 45cm • 👨‍👩‍👧‍👦 Para 6-8 personas
+                 • 👨‍👩‍👧‍👦 Para 6-8 personas
                   </div>
                 )}
               </div>
@@ -253,7 +253,7 @@ export function PizzaOrderDialog({ pizza, onAdd }: PizzaOrderDialogProps) {
                   ${getTotalPrice().toFixed(2)}
                 </span>
                 <span className="text-xs sm:text-sm text-gray-500">
-                  precio total
+                  Precio total
                 </span>
               </div>
               <button

@@ -163,7 +163,7 @@ export function useCart() {
   };
   const sendToWhatsApp = (deliveryInfo: DeliveryInfo) => {
     const message = formatWhatsAppMessage(deliveryInfo);
-    const phoneNumber = "1234567890"; // Reemplazar con el número real
+    const phoneNumber = "52502962"; // Reemplazar con el número real
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, "_blank");
 
