@@ -16,7 +16,6 @@ interface PizzaOrderDialogProps {
 }
 interface DeliveryInfo {
   nombre: string;
-  telefono: string;
   direccion: string;
   fecha: string;
   hora: string;

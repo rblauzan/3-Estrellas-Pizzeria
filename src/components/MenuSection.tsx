@@ -1,7 +1,5 @@
-"use client"
 
 import { Pizza } from "lucide-react"
-import { PizzaOrderDialog } from "./PizzaOrderDialog"
 import { pizzasDestacadas } from "../data/menu"
 import type { Pizzas  } from "../types"
 
@@ -10,7 +8,7 @@ interface MenuSectionProps {
   onAddToCart: (pizza: Pizzas, selectedAgregados: string[]) => void
 }
 
-export function MenuSection({ onAddToCart }: MenuSectionProps) {
+export function MenuSection({ }: MenuSectionProps) {
   return (
     <section id="menu" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">

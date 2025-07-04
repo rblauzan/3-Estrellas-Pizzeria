@@ -1,4 +1,3 @@
-"use client";
 import { useState } from "react";
 import type React from "react";
 import {
@@ -10,7 +9,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 
-interface DeliveryInfo {
+export interface DeliveryInfo {
   nombre: string;
   direccion: string;
   fecha: string;

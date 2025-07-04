@@ -1,4 +1,4 @@
-"use client";
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { useState } from "react";
 import { Header } from "../components/Header";
 import { HeroSection } from "../components/HeroSection";

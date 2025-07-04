@@ -5,6 +5,7 @@ export interface CartItem {
   cantidad: number;
   agregados: string[];
   tipo: "pizza" | "bebida";
+  tamaño: string
 }
 
 export interface Pizzas {

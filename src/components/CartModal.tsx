@@ -1,8 +1,12 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 "use client"
 
 import { ShoppingCart, Plus, Minus, X, Trash2, PhoneIcon as WhatsApp, UtensilsCrossed } from "lucide-react"
 import type { CartItem } from "../types"
 import { agregados } from "../data/menu"
+import { DeliveryInfoModal, type DeliveryInfo } from "./DeliveryInfoModal"
+import { useState } from "react"
 
 interface CartModalProps {
   isOpen: boolean
@@ -10,7 +14,7 @@ interface CartModalProps {
   cart: CartItem[]
   onUpdateQuantity: (id: string, quantity: number) => void
   onRemoveItem: (id: string) => void
-  onSendToWhatsApp: () => void
+  onSendToWhatsApp: (deliveryInfo: DeliveryInfo) => void
   onOpenMenu: () => void
 }
 
@@ -23,11 +27,13 @@ export function CartModal({
   onSendToWhatsApp,
   onOpenMenu,
 }: CartModalProps) {
+  
+  const [showDeliveryInfo, setShowDeliveryInfo] = useState(false)
   const getTotalPrice = () => {
     return cart.reduce((total, item) => {
       const agregadosPrice = item.agregados.reduce((sum, agregado) => {
         const agregadoItem = agregados.find((a) => a.nombre === agregado)
-        return sum + (agregadoItem?.precio || 0)
+        return sum + (agregadoItem?.precio ?? 0)
       }, 0)
       return total + (item.precio + agregadosPrice) * item.cantidad
     }, 0)
@@ -36,8 +42,14 @@ export function CartModal({
   const totalItems = cart.reduce((sum, item) => sum + item.cantidad, 0)
 
   const handleSendToWhatsApp = () => {
-    onSendToWhatsApp()
-    onOpenChange(false) // Cerrar el modal después de enviar
+    if (cart.length === 0) return
+    setShowDeliveryInfo(true)
+  }
+
+  const handleDeliveryInfoConfirm = (deliveryInfo: DeliveryInfo) => {
+    onSendToWhatsApp(deliveryInfo)
+    setShowDeliveryInfo(false)
+    onOpenChange(false) // Cerrar el modal del carrito
   }
 
   if (!isOpen) return null
@@ -60,7 +72,7 @@ export function CartModal({
                 </p>
               </div>
               <button
-                onClick={() => onOpenChange(false)}
+                onClick={() => { onOpenChange(false); }}
                 className="text-white hover:text-orange-200 p-2 rounded-full hover:bg-white hover:bg-opacity-20 transition-all"
               >
                 <X className="h-7 w-7" />
@@ -120,7 +132,7 @@ export function CartModal({
                           <div className="flex items-start justify-between mb-2">
                             <h3 className="font-bold text-gray-800 text-lg">{item.nombre}</h3>
                             <button
-                              onClick={() => onRemoveItem(item.id)}
+                              onClick={() => { onRemoveItem(item.id); }}
                               className="text-red-500 hover:text-red-700 p-1 rounded-full hover:bg-red-50 transition-all"
                               title="Eliminar producto"
                             >
@@ -145,7 +157,7 @@ export function CartModal({
                                   item.precio +
                                   item.agregados.reduce((sum, agregado) => {
                                     const agregadoItem = agregados.find((a) => a.nombre === agregado)
-                                    return sum + (agregadoItem?.precio || 0)
+                                    return sum + (agregadoItem?.precio ?? 0)
                                   }, 0)
                                 ).toFixed(2)}
                               </p>
@@ -155,7 +167,7 @@ export function CartModal({
                             {/* Controles de cantidad */}
                             <div className="flex items-center gap-3">
                               <button
-                                onClick={() => onUpdateQuantity(item.id, item.cantidad - 1)}
+                                onClick={() => { onUpdateQuantity(item.id, item.cantidad - 1); }}
                                 className="bg-gray-100 hover:bg-gray-200 text-gray-700 w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-105"
                               >
                                 <Minus className="h-4 w-4" />
@@ -164,7 +176,7 @@ export function CartModal({
                                 {item.cantidad}
                               </span>
                               <button
-                                onClick={() => onUpdateQuantity(item.id, item.cantidad + 1)}
+                                onClick={() => { onUpdateQuantity(item.id, item.cantidad + 1); }}
                                 className="bg-gray-100 hover:bg-gray-200 text-gray-700 w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-105"
                               >
                                 <Plus className="h-4 w-4" />
@@ -206,6 +218,13 @@ export function CartModal({
           </div>
         </div>
       </div>
+      {/* Modal de información de entrega */}
+      <DeliveryInfoModal
+        isOpen={showDeliveryInfo}
+        onClose={() => { setShowDeliveryInfo(false); }}
+        onConfirm={handleDeliveryInfoConfirm}
+        isFamiliar={false}
+      />
     </>
   )
 }
