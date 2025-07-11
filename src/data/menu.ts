@@ -5,27 +5,27 @@ export const pizzasDestacadas: Pizzas[] = [
     nombre: "Jamón Supreme",
     descripcion:
       "Jamón, queso gouda, salsa de tomate, albahaca y aceite de oliva",
-    precio: 4.5,
+    precio: 7.55,
     imagen: "/pizzasection/Jamon.png?height=150&width=150",
   },
   {
     nombre: "Cebolla Supreme",
     descripcion:
       "Cebolla, queso gouda, salsa de tomate, albahaca y aceite de oliva",
-    precio: 4.0,
+    precio: 7.50,
     imagen: "/pizzasection/Cebolla.png?height=150&width=150",
   },
   {
     nombre: "Hawaiana Supreme",
     descripcion:
       "Jamón, piña, queso gouda, salsa de tomate, albahaca y aceite de oliva",
-    precio: 4.9,
+    precio: 7.50,
     imagen: "/pizzasection/Hawaiana.png?height=150&width=150",
   },
   {
     nombre: "Familiar Mixta",
     descripcion: "Jamón, cebolla confitada, salsa de tomate, pimineto y piña",
-    precio: 8.2,
+    precio: 10.75,
     imagen: "/pizzasection/FamiliarMixta.jpg?height=100&width=100",
   },
 ];
@@ -35,35 +35,42 @@ export const todasLasPizzas: Pizzas[] = [
     nombre: "Napolitana Supreme",
     descripcion:
       "Queso gouda, salsa de tomate, albahaca y aceite de oliva",
-    precio: 3.50,
+    precio: 5.25,
     imagen: "/pizzasection/Napoles.png?height=150&width=150",
   },
   {
     nombre: "Jamón Supreme",
     descripcion:
       "Jamón, queso gouda, salsa de tomate, albahaca y aceite de oliva",
-    precio: 4.50,
+    precio: 7.55,
     imagen: "/pizzasection/Jamon.png?height=150&width=150",
   },
   {
     nombre: "Cebolla Supreme",
     descripcion:
       "Cebolla, queso gouda, salsa de tomate, albahaca y aceite de oliva",
-    precio: 4.00,
+    precio: 7.50,
     imagen: "/pizzasection/Cebolla.png?height=150&width=150",
   },
   {
     nombre: "Hawaiana Supreme",
     descripcion:
       "Jamón, piña, queso gouda, salsa de tomate, albahaca y aceite de oliva",
-    precio: 4.90,
+    precio: 7.60,
+    imagen: "/pizzasection/Hawaiana.png?height=150&width=150",
+  },
+  {
+    nombre: "Pimiento Supreme",
+    descripcion:
+      "Pimiento, queso gouda, salsa de tomate, albahaca y aceite de oliva",
+    precio: 7.60,
     imagen: "/pizzasection/Hawaiana.png?height=150&width=150",
   },
   {
     nombre: "Familiar Napolitana",
     descripcion:
       "Salsa de tomate, queso gouda, albahaca y aceite de oliva",
-    precio: 6.20,
+    precio: 10.00,
     imagen: "/pizzasection/FamiliarNapoles.jpg?height=100&width=100",
     esFamiliar: true,
   },
@@ -71,7 +78,7 @@ export const todasLasPizzas: Pizzas[] = [
     nombre: "Familiar Mixta",
     descripcion:
       "Salsa de tomate, queso gouda, jamón, cebolla confitada, pimiento, piña, albahaca y aceite de oliva",
-    precio: 8.20,
+    precio: 10.75,
     imagen: "/pizzasection/FamiliarMixta.jpg?height=100&width=100",
     esFamiliar: true,
   },
@@ -91,9 +98,9 @@ export const bebidas: Bebida[] = [
 ];
 
 export const agregados: Agregado[] = [
-  { nombre: "Jamón", precio: 0.75 },
-  { nombre: "Pimientos", precio: 0.5 },
-  { nombre: "Cebolla Confitada", precio: 0.5 },
-  { nombre: "Queso Extra", precio: 0.75 },
-  { nombre: "Piña Glaseada", precio: 0.5 },
+  { nombre: "Jamón", precio: 1.10 },
+  { nombre: "Pimientos", precio: 0.75 },
+  { nombre: "Cebolla Confitada", precio: 0.75 },
+  { nombre: "Queso Extra", precio: 1.10 },
+  { nombre: "Piña Glaseada", precio: 0.75 },
 ];
