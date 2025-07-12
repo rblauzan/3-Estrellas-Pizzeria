@@ -63,9 +63,13 @@ export function PizzaOrderDialog({ pizza, onAdd }: PizzaOrderDialogProps) {
     const totalPrice = pizza.precio + agregadosPrice;
 
     let message = "🍕 *PEDIDO PIZZA FAMILIAR - 3 ESTRELLAS PIZZERÍA* 🍕\n\n";
+  
     message += "👤 *INFORMACIÓN DEL CLIENTE:*\n"
+    message += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n";
     message += `• Nombre: ${deliveryInfo.nombre}\n`
+
     message += "📍 *INFORMACIÓN DE ENTREGA:*\n"
+    message += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n";
     message += `• Dirección: ${deliveryInfo.direccion}\n`
     message += `• Fecha: ${deliveryInfo.fecha}\n`
     message += `• Hora: ${deliveryInfo.hora}\n`
@@ -73,12 +77,13 @@ export function PizzaOrderDialog({ pizza, onAdd }: PizzaOrderDialogProps) {
     if (deliveryInfo.notas) {
       message += `• Notas: ${deliveryInfo.notas}\n`
     }
-
-    message += `\n⏰ *IMPORTANTE:*\n`
-    message += "• Pizza familiar con 1 día de anticipación ✅\n"
-    message += "• Todos los datos proporcionados ✅\n\n"
+    message += "📋 *SOLICITUD DE RESERVA:*\n"
+    message += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+    message += `🍕 *${pizza.nombre}*\n`
+    message += `💰 Precio base: $${pizza.precio.toFixed(2)}\n`
 
     if (selectedAgregados.length > 0) {
+      message += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n";
       message += `\n🧀 *Agregados solicitados:*\n`;
       selectedAgregados.forEach((agregado) => {
         const agregadoItem = agregados.find((a) => a.nombre === agregado);
@@ -88,9 +93,8 @@ export function PizzaOrderDialog({ pizza, onAdd }: PizzaOrderDialogProps) {
       });
       message += `💰 Costo agregados: $${agregadosPrice.toFixed(2)}\n`;
     }
-
-    message += `\n💵 *TOTAL: $${totalPrice.toFixed(2)}*\n\n`;
-   
+    message += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n";
+    message += `\n💵 *TOTAL: $${totalPrice.toFixed(2)}*\n\n`;   
     message += "¡Gracias por elegir 3 Estrellas Pizzería! 🌟🌟🌟";
 
     const phoneNumber = "52502962";
