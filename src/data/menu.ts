@@ -64,7 +64,7 @@ export const todasLasPizzas: Pizzas[] = [
     descripcion:
       "Pimiento, queso gouda, salsa de tomate, albahaca y aceite de oliva",
     precio: 7.60,
-    imagen: "/pizzasection/Hawaiana.png?height=150&width=150",
+    imagen: "/pizzasection/Pimiento.png?height=150&width=150",
   },
   {
     nombre: "Familiar Napolitana",

@@ -207,9 +207,6 @@ export function MenuModal({ isOpen, onOpenChange, onAddPizza, onAddBebida }: Men
                                   <Clock className="h-3 w-3" />
                                   <span className="font-medium">Pedido con 1 día de anticipación</span>
                                 </div>
-                                <div className="text-xs text-orange-600 mt-1">
-                                  📏 Tamaño: 45cm • 👨‍👩‍👧‍👦 Para 4-6 personas
-                                </div>
                               </div>
 
                               <div className="flex items-end justify-between">

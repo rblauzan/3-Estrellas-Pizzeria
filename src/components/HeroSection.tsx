@@ -10,7 +10,7 @@ interface HeroSectionProps {
 export function HeroSection({ onMenuOpen, onCartOpen }: HeroSectionProps) {
   // Array de imágenes para el carrusel
   const carouselImages = [
-    "/carrousel/Carrousel-1.jpg?height=400&width=500&text=Pizza+Napolitana Clásica",
+    "/carrousel/Carrousel-7.jpg?height=400&width=500&text=Pizza+Napolitana Clásica",
     "/carrousel/Carrousel-2.jpg?height=400&width=500&text=Pizza+Jamón Supreme",
     "/carrousel/Carrousel-3.jpg?height=400&width=500&text=Pizza+Cebolla Supreme",
     "/carrousel/Carrousel-4.jpg?height=400&width=500&text=Pizza+Hawaiana Supreme",
